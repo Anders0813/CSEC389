@@ -1,0 +1,31 @@
+﻿{
+    "antivirusEngine": {
+        "enforcementLevel": "real_time",
+        "behaviorMonitoring": "enabled",
+        "enableFileHashComputation": "disabled",
+        "scanAfterDefinitionUpdate": true,
+        "scanArchives": true,
+        "maximumOnDemandScanThreads": 2,
+        "exclusionsMergePolicy": "merge",
+        "threatTypeSettingsMergePolicy": "merge",
+        "threatTypeSettings": [
+            {
+                "key": "potentially_unwanted_application",
+                "value": "audit"
+            },
+            {
+                "key": "archive_bomb",
+                "value": "audit"
+            }
+        ]
+    },
+    "scanResultsRetentionDays": 30,
+    "scanHistoryMaximumItems": 10000,
+    "cloudService": {
+        "enabled": true,
+        "diagnosticLevel": "optional",
+        "cloudBlockLevel": "normal",
+        "automaticSampleSubmissionConsent": "safe",
+        "automaticDefinitionUpdateEnabled": true
+    }
+}
