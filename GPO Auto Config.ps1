@@ -8,33 +8,50 @@ New-ADOrganizationalUnit -Name "managed" -Path "OU=corp,DC=ad,DC=depaulseclabs,D
 New-ADOrganizationalUnit -Name "Linux" -Path "OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
 New-ADOrganizationalUnit -Name "Servers" -Path "OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
 New-ADOrganizationalUnit -Name "RDP Enabled" -Path "OU=Servers,OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
-New-ADOrganizationalUnit -Name "Workstations" -Path "OU=managed,OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
+New-ADOrganizationalUnit -Name "Workstations" -Path "OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
 New-ADOrganizationalUnit -Name "RDP Enabled" -Path "OU=Workstations,OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
 
 #Add Regular Users
-New-ADUser -Name "Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "RK5A&i09"  -Enabled $true
-New-ADUser -Name "Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "agreen" -UserPrincipalName "agreen@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "B3iP08@1"  -Enabled $true
-New-ADUser -Name "John Capparelli" -GivenName "John" -Surname "Capparelli" -SamAccountName "jcapparelli" -UserPrincipalName "jcapparelli@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "HV0d!2y*"  -Enabled $true
-New-ADUser -Name "Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "rmonarrez" -UserPrincipalName "rmonarrez@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "6Vz3%i0R"  -Enabled $true
-New-ADUser -Name "Ratvik Patel" -GivenName "Ratvik" -Surname "Patel" -SamAccountName "rpatel" -UserPrincipalName "rpatel@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "rtA05H0^"  -Enabled $true
-New-ADUser -Name "Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "vatanasov" -UserPrincipalName "vatanasov@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "9iM0$BUa"  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "RK5A&i09" -AsPlainText -Force
+New-ADUser -Name "Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "B3iP08@1" -AsPlainText -Force
+New-ADUser -Name "Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "agreen" -UserPrincipalName "agreen@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "HV0d!2y*" -AsPlainText -Force
+New-ADUser -Name "John Capparelli" -GivenName "John" -Surname "Capparelli" -SamAccountName "jcapparelli" -UserPrincipalName "jcapparelli@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "6Vz3%i0R" -AsPlainText -Force
+New-ADUser -Name "Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "rmonarrez" -UserPrincipalName "rmonarrez@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "rtA05H0^" -AsPlainText -Force
+New-ADUser -Name "Ratvik Patel" -GivenName "Ratvik" -Surname "Patel" -SamAccountName "rpatel" -UserPrincipalName "rpatel@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "9iM0!BUa" -AsPlainText -Force
+New-ADUser -Name "Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "vatanasov" -UserPrincipalName "vatanasov@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Privileged Users
-New-ADUser -Name "Privileged - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "p-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "D&^%B$Noq2T8"  -Enabled $true
-New-ADUser -Name "Privileged - Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "p-agreen" -UserPrincipalName "p-agreen@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "z4h4nt3C#jzA"  -Enabled $true
-New-ADUser -Name "Privileged - John Capparelli" -GivenName "John" -Surname "Capparelli" -SamAccountName "p-jcapparelli" -UserPrincipalName "p-jcapparelli@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "5&GY6gt8LKcK"  -Enabled $true
-New-ADUser -Name "Privileged - Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "p-rmonarrez" -UserPrincipalName "p-rmonarrez@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "L26Ia1ms&!7b"  -Enabled $true
-New-ADUser -Name "Privileged - Ratvik Patel" -GivenName "Ratvik" -Surname "Patel" -SamAccountName "p-rpatel" -UserPrincipalName "p-rpatel@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "@oE2WT35w&&$"  -Enabled $true
-New-ADUser -Name "Privileged - Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "p-vatanasov" -UserPrincipalName "p-vatanasov@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "*bDJU&674DIb"  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "D&^%B!Noq2T8" -AsPlainText -Force
+New-ADUser -Name "Privileged - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "p-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "z4h4nt3C#jzA" -AsPlainText -Force
+New-ADUser -Name "Privileged - Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "p-agreen" -UserPrincipalName "p-agreen@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "5&GY6gt8LKcK" -AsPlainText -Force
+New-ADUser -Name "Privileged - John Capparelli" -GivenName "John" -Surname "Capparelli" -SamAccountName "p-jcapparelli" -UserPrincipalName "p-jcapparelli@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "L26Ia1ms&!7b" -AsPlainText -Force
+New-ADUser -Name "Privileged - Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "p-rmonarrez" -UserPrincipalName "p-rmonarrez@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "@oE2WT35w&&$" -AsPlainText -Force
+New-ADUser -Name "Privileged - Ratvik Patel" -GivenName "Ratvik" -Surname "Patel" -SamAccountName "p-rpatel" -UserPrincipalName "p-rpatel@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "*bDJU&674DIb" -AsPlainText -Force
+New-ADUser -Name "Privileged - Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "p-vatanasov" -UserPrincipalName "p-vatanasov@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Domain Admins
-ew-ADUser -Name "Domain - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "d-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "$vNxsIdY8247Mp0*"  -Enabled $true
-ew-ADUser -Name "Zachary Musgrave" -GivenName "Zachary" -Surname "Musgrave" -SamAccountName "zmusgrave" -UserPrincipalName "zmusgrave@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "ReallyBadStuffIsHappening!"  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "!vNxsIdY8247Mp0*" -AsPlainText -Force
+ew-ADUser -Name "Domain - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "d-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "ReallyBadStuffIsHappening!" -AsPlainText -Force
+ew-ADUser -Name "Zachary Musgrave" -GivenName "Zachary" -Surname "Musgrave" -SamAccountName "zmusgrave" -UserPrincipalName "zmusgrave@ad.depaulseclabs.com" -Path "OU='Domain Users',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Service Accounts
-ew-ADUser -Name "Domain Join" -GivenName "Domain" -Surname "Join" -SamAccountName "domain" -UserPrincipalName "domain@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "^4yaWLk8%BFw"  -Enabled $true
-ew-ADUser -Name "svc-splunk" -GivenName "Splunk" -Surname "Service" -SamAccountName "svc-splunk" -UserPrincipalName "svc-splunk@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "S!lu2CI4sgQ7"  -Enabled $true
-ew-ADUser -Name "svc-nessus" -GivenName "Nessus" -Surname "Service" -SamAccountName "svc-nessus" -UserPrincipalName "svc-nessus@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword "c!oOHA4%7aiu"  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "^4yaWLk8%BFw" -AsPlainText -Force
+ew-ADUser -Name "Domain Join" -GivenName "Domain" -Surname "Join" -SamAccountName "domain" -UserPrincipalName "domain@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "S!lu2CI4sgQ7" -AsPlainText -Force
+ew-ADUser -Name "svc-splunk" -GivenName "Splunk" -Surname "Service" -SamAccountName "svc-splunk" -UserPrincipalName "svc-splunk@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+$secpasswd = ConvertTo-SecureString -String "c!oOHA4%7aiu" -AsPlainText -Force
+ew-ADUser -Name "svc-nessus" -GivenName "Nessus" -Surname "Service" -SamAccountName "svc-nessus" -UserPrincipalName "svc-nessus@ad.depaulseclabs.com" -Path "OU='Service Accounts',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Groups
 New-ADGroup -Name "G-Domain Admins" -SamAccountName "G-Domain Admins" -GroupCategory Security -GroupScope Global -DisplayName "G-Domain Admins" -Path "OU='Domain Groups',OU=corp,DC=ad,DC=depaulseclabs,DC=com" -Description "Members of this group are Domain Admins"
