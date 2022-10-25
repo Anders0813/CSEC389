@@ -33,7 +33,7 @@ New-ADUser -Name "Privileged - Andrew Green" -GivenName "Andrew" -Surname "Green
 $secpasswd = ConvertTo-SecureString -String "5&GY6gt8LKcK" -AsPlainText -Forc
 New-ADUser -Name "Privileged - John Capparelli" -GivenName "John" -Surname "Capparelli" -SamAccountName "p-jcapparelli" -UserPrincipalName "p-jcapparelli@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 $secpasswd = ConvertTo-SecureString -String "L26Ia1ms&!7b" -AsPlainText -Force
-New-ADUser -Name "Privileged - Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "p-rmonarrez" -UserPrincipalName "p-rmonarrez@ad.depaulseclabs.com" -Path "OU=Domain UsersOU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
+New-ADUser -Name "Privileged - Rolando Monarrez" -GivenName "Rolando" -Surname "Monarrez" -SamAccountName "p-rmonarrez" -UserPrincipalName "p-rmonarrez@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 $secpasswd = ConvertTo-SecureString -String "@oE2WT35w&&$" -AsPlainText -Force
 New-ADUser -Name "Privileged - Ratvik Patel" -GivenName "Ratvik" -Surname "Patel" -SamAccountName "p-rpatel" -UserPrincipalName "p-rpatel@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 $secpasswd = ConvertTo-SecureString -String "*bDJU&674DIb" -AsPlainText -Force
