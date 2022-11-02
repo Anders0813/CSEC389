@@ -1,3 +1,5 @@
+#DC=ad,DC=depaulseclabs,DC=com
+
 #Add OU Structure
 New-ADOrganizationalUnit -Name "corp" -Path "DC=ad,DC=depaulseclabs,DC=com"
 New-ADOrganizationalUnit -Name "Service Accounts" -Path "OU=corp,DC=ad,DC=depaulseclabs,DC=com"
@@ -12,7 +14,7 @@ New-ADOrganizationalUnit -Name "Workstations" -Path "OU=managed,OU=corp,DC=ad,DC
 New-ADOrganizationalUnit -Name "RDP Enabled" -Path "OU=Workstations,OU=managed,OU=corp,DC=ad,DC=depaulseclabs,DC=com"
 
 #Add Regular Users
-$secpasswd = ConvertTo-SecureString -String "RK5A&i09" -AsPlainText -Force
+$secpasswd = ConvertTo-SecureString -String "rk5a&i09" -AsPlainText -Force
 New-ADUser -Name "Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 $secpasswd = ConvertTo-SecureString -String "B3iP08@1" -AsPlainText -Force
 New-ADUser -Name "Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "agreen" -UserPrincipalName "agreen@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
@@ -26,7 +28,7 @@ $secpasswd = ConvertTo-SecureString -String "9iM0!BUa" -AsPlainText -Force
 New-ADUser -Name "Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "vatanasov" -UserPrincipalName "vatanasov@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Privileged Users
-$secpasswd = ConvertTo-SecureString -String "D&^%B!Noq2T8" -AsPlainText -Force
+$secpasswd = ConvertTo-SecureString -String "d&^%b!noq2t8" -AsPlainText -Force
 New-ADUser -Name "Privileged - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "p-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 $secpasswd = ConvertTo-SecureString -String "z4h4nt3C#jzA" -AsPlainText -Force
 New-ADUser -Name "Privileged - Andrew Green" -GivenName "Andrew" -Surname "Green" -SamAccountName "p-agreen" -UserPrincipalName "p-agreen@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
@@ -40,9 +42,9 @@ $secpasswd = ConvertTo-SecureString -String "*bDJU&674DIb" -AsPlainText -Force
 New-ADUser -Name "Privileged - Victor Atanasov" -GivenName "Victor" -Surname "Atanasov" -SamAccountName "p-vatanasov" -UserPrincipalName "p-vatanasov@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Domain Admins
-$secpasswd = ConvertTo-SecureString -String "!vNxsIdY8247Mp0*" -AsPlainText -Force
+$secpasswd = ConvertTo-SecureString -String "!vnxsldY8247mp0*" -AsPlainText -Force
 New-ADUser -Name "Domain - Ethan Anderson" -GivenName "Ethan" -Surname "Anderson" -SamAccountName "d-eanderson" -UserPrincipalName "eanderson@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
-$secpasswd = ConvertTo-SecureString -String "ReallyBadStuffIsHappening!" -AsPlainText -Force
+$secpasswd = ConvertTo-SecureString -String "reallybadstuffishappening!" -AsPlainText -Force
 New-ADUser -Name "Zachary Musgrave" -GivenName "Zachary" -Surname "Musgrave" -SamAccountName "zmusgrave" -UserPrincipalName "zmusgrave@ad.depaulseclabs.com" -Path "OU=Domain Users,OU=corp,DC=ad,DC=depaulseclabs,DC=com" -AccountPassword $secpasswd  -Enabled $true
 
 #Add Service Accounts
